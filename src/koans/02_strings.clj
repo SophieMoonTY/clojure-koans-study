@@ -19,22 +19,24 @@
   (= 11  (count "Hello World"))
 
   "But strings and characters are not the same"
-  (= __ (= \c "c"))
+  (= false (= \c "c"))
 
   "What if you only wanted to get part of a string?"
-  (= "World" (subs "Hello World" __ __))
+  (= "World" (subs "Hello World" 6 11))
 
   "How about joining together elements in a list?"
-  (= __ (string/join '(1 2 3)))
+  (=  (string/join '(1 2 3)))
 
   "What if you wanted to separate them out?"
-  (= "1, 2, 3" (string/join __ '(1 2 3)))
+  (= "1, 2, 3" (string/join ", " '(1 2 3)))
 
   "Maybe you want to separate out all your lines"
-  (= [__ __ __] (string/split-lines "1\n2\n3"))
+  (= ["1" "2" "3"] (string/split-lines "1\n2\n3"))
 
   "You may want to make sure your words are backwards"
-  (= __ (string/reverse "hello"))
+  (= "olleh" (string/reverse "hello"))
+
+
 
   "Maybe you want to find the index of the first occurrence of a substring"
   (= 0 (string/index-of "hello world" __))
