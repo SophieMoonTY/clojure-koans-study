@@ -54,15 +54,15 @@
   (= {:a 1 :b 15 :c 3} (merge-with * {:a 1 :b 5} {:b 3 :c 3}))
 
   "Often you will need to get the keys, but the order is undependable"
-  (= (list __ __ __)
+  (= (list 2010 2014 2018)
      (sort (keys { 2014 "Sochi" 2018 "PyeongChang" 2010 "Vancouver"})))
 
   "You can get the values in a similar way"
-  (= (list __ __ __)
+  (= (list "PyeongChang" "Sochi" "Vancouver")
      (sort (vals {2010 "Vancouver" 2014 "Sochi" 2018 "PyeongChang"})))
 
   "You can even iterate over the map entries as a seq"
-  (= {:a __ :b __}
+  (= {:a 2 :b 3}
      (into {}
            (map
             (fn [[k v]] [k (inc v)])

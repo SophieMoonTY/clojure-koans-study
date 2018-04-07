@@ -6,9 +6,11 @@
 
 (defn square [n] (* n n))
 
+(defn twice [parameter] (* 2 parameter))
+
 (meditations
   "Calling a function is like giving it a hug with parentheses"
-  (= __ (square 9))
+  (= 81 (square 9))
 
   "Functions are usually defined before they are used"
   (= __ (multiply-by-ten 2))
