@@ -23,14 +23,13 @@
 
   "You may have a multitude of possible paths"
   (let [x 5]
-    (= :your-road (cond (= x __) :road-not-taken
-                        (= x __) :another-road-not-taken
-                        :else __)))
+    (= :your-road (cond (= x 10) :road-not-taken
+                        (= x 0) :another-road-not-taken
+                        :else :your-road)))
 
   "Or your fate may be sealed"
-  (= 'doom (if-not (zero? __)
-          'doom
-          'more-doom))
+  (= 'doom (if-not (zero? 90)
+          'doom 'more-doom))
 
   "In case of emergency, go fast"
   (= "pretty fast"
