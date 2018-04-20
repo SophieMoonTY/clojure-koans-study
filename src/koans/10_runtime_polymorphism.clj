@@ -1,8 +1,13 @@
 (ns koans.10-runtime-polymorphism
   (:require [koan-engine.core :refer :all]))
 
+(defn prina [par1 par2]
+  (print par1 par2)
+)
+; (prina "This is A " "This is B")
+
 (defn hello
-  ([] "Hello World!")
+  ([] "Hello World!") ; parameter 가 없을 때.
   ([a] (str "Hello, you silly " a "."))
   ([a & more] (str "Hello to this group: "
                    (apply str
@@ -16,10 +21,10 @@
 
 (meditations
   "Some functions can be used in different ways - with no arguments"
-  (= __ (hello))
+  (= "Hello World!" (hello))
 
   "With one argument"
-  (= __ (hello "world"))
+  (= "Hello, you silly world." (hello "world"))
 
   "Or with many arguments"
   (= __
